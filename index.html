@@ -1,16 +1,563 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Farm Hisab - Privacy Policy</title><style>body{font-family:Arial,sans-serif;line-height:1.6;max-width:850px;margin:auto;padding:24px;color:#222}h1{color:#176b3a}h2{color:#205d3a;margin-top:28px}.card{background:#f4f8f5;padding:16px;border-radius:10px}</style></head><body>
-<h1>Farm Hisab – Privacy Policy</h1><p><strong>Effective date:</strong> 30 August 2026</p>
-<p>This Privacy Policy explains how <strong>Farm Hisab</strong>, developed by <strong>Shekhar Kuttarmare</strong>, handles information when you use the Farm Hisab mobile application.</p>
-<h2>1. Information stored in the app</h2><p>Farm Hisab is designed as an offline-first farm management application. Information you enter, such as fields, crops, farm expenses, income, labour records, cotton picking records, inventory, spray/fertilizer records, tasks, crop diary information and related photos, is primarily stored locally on your device.</p>
-<h2>2. Photos and media</h2><p>If you choose to add photos to crop, spray or fertilizer records, the app uses the Android system media/file picker. Photos are used to display the records you create. Farm Hisab does not require access to your entire photo library.</p>
-<h2>3. Backup and restore</h2><p>The app provides backup and restore functionality. Backup files are created so you can preserve and restore farm records. You control where you save or share backup files.</p>
-<h2>4. Notifications</h2><p>Farm Hisab may schedule local task reminders so that you can receive task notifications even when the app is not open. These reminders are generated on your device.</p>
-<h2>5. Advertising</h2><p>Farm Hisab may use Google AdMob to display advertisements. AdMob may process advertising identifiers, device/app information and ad interaction information as described in Google's applicable policies. Where required, the app provides privacy/consent choices through Google's User Messaging Platform (UMP).</p>
-<h2>6. Internet access</h2><p>The core farm-record features are designed to work offline. Internet access may be used for advertising and other online services. If internet access is unavailable, ads or online services may not function, while offline farm-record features can continue to work.</p>
-<h2>7. Data sharing</h2><p>Farm Hisab does not sell your farm records. Information may be processed by third-party services used by the app, such as Google AdMob, where necessary to provide advertising and related services.</p>
-<h2>8. Data security and retention</h2><p>Farm records stored locally remain on your device unless you choose to export, back up or share them. Uninstalling the app or clearing its storage may remove locally stored records. Keep a backup if you need to retain them.</p>
-<h2>9. Children's privacy</h2><p>Farm Hisab is a general farm-management application and is not directed specifically at children. We do not knowingly request personal information from children.</p>
-<h2>10. Your choices</h2><p>You can choose whether to enter information, create or share backups, add photos, and interact with advertisements. Where available, you can manage advertising privacy/consent choices from the app.</p>
-<h2>11. Changes</h2><p>This Privacy Policy may be updated when app features, services or legal requirements change. The updated policy will be published at this URL with a revised effective date.</p>
-<h2>12. Contact</h2><div class="card"><p><strong>Developer:</strong> Shekhar Kuttarmare</p><p><strong>Email:</strong> <a href="mailto:shekhark234@gmail.com">shekhark234@gmail.com</a></p></div>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FarmHisab - Farm Management App</title>
+
+    <meta name="description"
+          content="FarmHisab is an offline farm management app for crop, field, expense, income, labour, inventory and farm records.">
+
+    <meta name="theme-color" content="#0b6b3a">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8f4;
+            color: #183222;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #075b32, #129447);
+            color: white;
+            padding: 70px 20px 60px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            background: white;
+            padding: 5px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 44px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #d8ff4f;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 15px auto 0;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        section {
+            padding: 55px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            margin: 0 0 8px;
+            font-size: 30px;
+            color: #075b32;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: #5c6b61;
+        }
+
+        .about {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border: 1px solid #e3eee5;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            margin: 5px 0 8px;
+            color: #075b32;
+            font-size: 20px;
+        }
+
+        .feature p {
+            margin: 0;
+            color: #5c6b61;
+            font-size: 15px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: #075b32;
+        }
+
+        .button-area {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 24px;
+            margin: 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #08783d;
+            color: white;
+        }
+
+        .button-secondary {
+            background: white;
+            color: #075b32;
+            border: 2px solid #08783d;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact {
+            background: #e7f4e9;
+            border-radius: 20px;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .contact h2 {
+            color: #075b32;
+            margin-top: 0;
+        }
+
+        .contact a {
+            color: #075b32;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #063d25;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+        }
+
+        footer a {
+            color: #d8ff4f;
+            text-decoration: none;
+        }
+
+        .small {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 800px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+
+        <!--
+        Agar baad me app icon website par dikhana ho,
+        to icon.png upload karke neeche src="icon.png" kar sakte ho.
+        -->
+        <div style="font-size:70px; margin-bottom:10px;">🌱</div>
+
+        <h1>Farm<span>Hisab</span></h1>
+
+        <p>
+            Simple and powerful farm management app
+            for keeping your farm records organized.
+        </p>
+
+        <div class="button-area">
+            <a class="button button-secondary" href="#features">
+                Explore Features
+            </a>
+
+            <a class="button button-secondary" href="#contact">
+                Contact Developer
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+    <section>
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About FarmHisab</h2>
+                <p>Your digital farm record and management companion</p>
+            </div>
+
+            <div class="about">
+
+                <p>
+                    <strong>FarmHisab</strong> is a farm management application
+                    designed to help farmers maintain their farm records in
+                    an organized and convenient way.
+                </p>
+
+                <p>
+                    The app helps manage fields, crops, farm expenses,
+                    income, labour, cotton picking, inventory, spray and
+                    fertilizer records, tasks, reports and historical farm data.
+                </p>
+
+                <p>
+                    FarmHisab is designed with an offline-first approach,
+                    allowing important farm records to remain available
+                    without requiring a continuous internet connection.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FEATURES -->
+    <section id="features">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>FarmHisab Features</h2>
+                <p>Everything you need to manage your farm records</p>
+            </div>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">🌾</div>
+                    <h3>Field & Crop Management</h3>
+                    <p>
+                        Manage fields, crops, sowing dates, harvests and
+                        crop history year-wise.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Farm Expenses</h3>
+                    <p>
+                        Record spraying, fertilizer, labour, machinery
+                        and other farm expenses.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📦</div>
+                    <h3>Inventory</h3>
+                    <p>
+                        Manage pesticides, fertilizers, seeds, fungicides,
+                        herbicides, tonics and other farm stock.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💊</div>
+                    <h3>Spray Records</h3>
+                    <p>
+                        Record medicines, quantities, pumps, costs and
+                        spray activity history.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🧪</div>
+                    <h3>Fertilizer Records</h3>
+                    <p>
+                        Maintain fertilizer usage, quantity, cost and
+                        crop-wise application history.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👷</div>
+                    <h3>Labour Management</h3>
+                    <p>
+                        Manage labour attendance, work, wages and
+                        payment records.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Cotton Picking</h3>
+                    <p>
+                        Record labour-wise cotton picking quantity,
+                        rate per kg and individual payments.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Crop Analytics</h3>
+                    <p>
+                        View crop-wise expenses, labour costs,
+                        picking costs, income and profit.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>Year History</h3>
+                    <p>
+                        Select a year and view historical crop and
+                        activity records date-wise.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💵</div>
+                    <h3>Income Tracking</h3>
+                    <p>
+                        Record farm sales, quantities, rates and
+                        crop-wise income.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Tasks & Reminders</h3>
+                    <p>
+                        Create farm tasks, mark them completed and
+                        receive reminders.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💾</div>
+                    <h3>Backup & Restore</h3>
+                    <p>
+                        Backup important farm records and restore them
+                        when required.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APP INFORMATION -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>App Information</h2>
+            </div>
+
+            <div class="info">
+
+                <div class="info-card">
+                    <h3>📱 Application</h3>
+
+                    <p>
+                        <strong>Name:</strong> FarmHisab
+                    </p>
+
+                    <p>
+                        <strong>Category:</strong> Agriculture / Productivity
+                    </p>
+
+                    <p>
+                        <strong>Platform:</strong> Android
+                    </p>
+
+                    <p>
+                        <strong>Developer:</strong> Shekhar Kuttarmare
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📧 Developer Support</h3>
+
+                    <p>
+                        For support, feedback or questions regarding
+                        FarmHisab, contact the developer.
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:shekhark234@gmail.com">
+                            shekhark234@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact">
+
+                <h2>Need Help?</h2>
+
+                <p>
+                    For FarmHisab support, feedback or questions,
+                    contact us by email.
+                </p>
+
+                <p>
+                    <a href="mailto:shekhark234@gmail.com">
+                        shekhark234@gmail.com
+                    </a>
+                </p>
+
+                <div class="button-area">
+
+                    <a
+                        class="button button-primary"
+                        href="mailto:shekhark234@gmail.com">
+                        Contact Developer
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="privacy-policy.html">
+                        Privacy Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            <strong>FarmHisab</strong>
+        </p>
+
+        <p class="small">
+            Farm Management & Hisab App
+        </p>
+
+        <p class="small">
+            © 2026 Shekhar Kuttarmare. All rights reserved.
+        </p>
+
+        <p>
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+  </html>
